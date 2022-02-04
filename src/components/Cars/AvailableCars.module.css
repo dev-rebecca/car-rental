@@ -1,0 +1,3 @@
+.cars {
+  @apply grid grid-cols-3;
+}
