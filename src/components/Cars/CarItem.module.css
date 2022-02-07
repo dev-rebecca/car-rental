@@ -1,0 +1,3 @@
+.car-item {
+  @apply m-10 bg-green-200 h-96;
+}

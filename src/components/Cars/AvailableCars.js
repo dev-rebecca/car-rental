@@ -1,4 +1,4 @@
-import HatItem from './HatItem';
+import CarItem from './CarItem';
 import classes from './AvailableCars.module.css';
 
 const AvailableCars = (props) => {
@@ -12,7 +12,7 @@ const AvailableCars = (props) => {
   ];
 
   const carsList = DUMMY_DATA.map((car) => (
-    <HatItem key={car.id} id={car.id} name={car.name} price={car.price} />
+    <CarItem key={car.id} id={car.id} name={car.name} price={car.price} />
   ));
 
   return <ul className={classes.cars}>{carsList}</ul>;

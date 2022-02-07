@@ -5,7 +5,7 @@ const Header = (props) => {
   return (
     <div className={classes.header}>
       <h1>Car Marketplace</h1>
-      <HeaderCartButton />
+      <HeaderCartButton onOpenCart={props.onOpenCart} />
     </div>
   );
 };
