@@ -1,28 +1,29 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 
 import Header from './components/Layout/Header';
 import Cart from './components/Cart/Cart';
 import AvailableCars from './components/Cars/AvailableCars';
+import CartProvider from './store/CartProvider';
 
 function App() {
-  const [openCart, setOpenCart] = useState(false);
+  const [cartIsShown, setCartIsShown] = useState(false);
 
   const openCartHandler = (props) => {
-    setOpenCart(true);
+    setCartIsShown(true);
   };
 
   const closeCartHandler = (props) => {
-    setOpenCart(false);
+    setCartIsShown(false);
   };
 
   return (
-    <Fragment>
+    <CartProvider>
       <Header onOpenCart={openCartHandler} />
-      {openCart && <Cart onCloseCart={closeCartHandler} />}
+      {cartIsShown && <Cart onCloseCart={closeCartHandler} />}
       <section>
         <AvailableCars />
       </section>
-    </Fragment>
+    </CartProvider>
   );
 }
 
